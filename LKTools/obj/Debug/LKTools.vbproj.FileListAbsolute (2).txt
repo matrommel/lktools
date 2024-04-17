@@ -1,0 +1,12 @@
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\bin\Debug\LK-Tools.dll
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\bin\Debug\LK-Tools.pdb
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\bin\Debug\LK-Tools.xml
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\bin\Debug\LK-Tools.dll.manifest
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\bin\Debug\LK-Tools.vsto
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\obj\Debug\LKTools.LKTools.resources
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\obj\Debug\LKTools.Resources.resources
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\obj\Debug\LKTools.vbproj.GenerateResource.Cache
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\obj\Debug\LK-Tools.dll
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\obj\Debug\LK-Tools.xml
+C:\Users\Rommel\Documents\Visual Studio 2012\Projects\LKTools\LKTools\obj\Debug\LK-Tools.pdb

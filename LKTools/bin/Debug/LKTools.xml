@@ -1,0 +1,303 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LKTools
+</name>
+</assembly>
+<members>
+<member name="T:LKTools.My.Resources.Resources">
+<summary>
+  Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.ResourceManager">
+<summary>
+  Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Culture">
+<summary>
+  Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+  Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.action_add_16xLG">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.AddForm_369">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Changelog">
+<summary>
+  Sucht eine lokalisierte Zeichenfolge, die V.0.4.19.0
+# Features:
+
+# Bugfixes:
+- #6 Karierte Vorlage hÃ¤ngt sich auf falls nur eine Zeile eingegeben wird.
+
+V.0.4.19.0
+# Features:
+
+# Bugfixes:
+- Neues Testzertifikat erstellt
+
+V.0.4.18.0
+# Features:
+- Karierte Vorlage ist nun als Bild einf gbar
+
+# Bugfixes:
+- Bei Verwendung der Revisionshistorie wird eine etwaige &quot;Gegen berliegende Seite&quot; aus dem Seitenlayout ebenfalls  bersprungen.
+- Neues Testzertifikat erstellt
+
+V.0.4.17.0
+# Features:
+
+# Bugfixes:
+- Bei Verwendung der Revisi [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.ColorSelection">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.dot_matrix_4x4">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Dots">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.dots_square_grid_bock">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Exam">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.eye_16xLG">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.folder_Closed_32xLG">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.gear_32xLG">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.GraphTemplate">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.IntelliTrace">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.LKTools248x223">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.MC">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Monitor_Screen_32xLG">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.NavigationPath_6036">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Overlay">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Overlay_Transparenz">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Overlay_Transparenz2">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Print_11009">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.PrintDocumentControl_697">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.PrintSolution">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.RuledTemplate">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.StatusAnnotations_Warning_32xLG_color">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Synchronize_16xLG">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Table_748">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Textbox">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.TextfarbeRot">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.TextfarbeSchwarz">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.TrueFalse">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Virtual_32xLG">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.Virtual_32xLG_2">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.WidthDash1">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.WidthDots1">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.WidthNormal">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.WidthSmall1">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.WidthThick1">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:LKTools.ThisRibbonCollection">
+
+</member>
+<member name="M:LKTools.ThisRibbonCollection.#ctor(Microsoft.Office.Tools.Ribbon.RibbonFactory)">
+
+</member>
+<member name="T:LKTools.ThisAddIn">
+
+</member>
+<member name="M:LKTools.ThisAddIn.#ctor(Microsoft.Office.Tools.Word.ApplicationFactory,System.IServiceProvider)">
+
+</member>
+<member name="M:LKTools.ThisAddIn.Initialize">
+
+</member>
+<member name="M:LKTools.ThisAddIn.FinishInitialization">
+
+</member>
+<member name="M:LKTools.ThisAddIn.InitializeDataBindings">
+
+</member>
+<member name="M:LKTools.ThisAddIn.InitializeCachedData">
+
+</member>
+<member name="M:LKTools.ThisAddIn.InitializeData">
+
+</member>
+<member name="M:LKTools.ThisAddIn.BindToData">
+
+</member>
+<member name="M:LKTools.ThisAddIn.StartCaching(System.String)">
+
+</member>
+<member name="M:LKTools.ThisAddIn.StopCaching(System.String)">
+
+</member>
+<member name="M:LKTools.ThisAddIn.IsCached(System.String)">
+
+</member>
+<member name="M:LKTools.ThisAddIn.BeginInitialization">
+
+</member>
+<member name="M:LKTools.ThisAddIn.EndInitialization">
+
+</member>
+<member name="M:LKTools.ThisAddIn.InitializeControls">
+
+</member>
+<member name="M:LKTools.ThisAddIn.InitializeComponents">
+
+</member>
+<member name="M:LKTools.ThisAddIn.NeedsFill(System.String)">
+
+</member>
+<member name="M:LKTools.ThisAddIn.OnShutdown">
+
+</member>
+<member name="T:LKTools.Globals">
+
+</member>
+<member name="M:LKTools.Globals.#ctor">
+
+</member>
+</members>
+</doc>
