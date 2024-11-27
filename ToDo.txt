@@ -15,17 +15,18 @@
 
 
 To-do V.0.5.0.0
-- Handbuch aktualisieren für Pfad ausgabe!
+- Handbuch aktualisieren f r Pfad ausgabe!
+- 
 
 To-do: V.0.5.0.0
 - Logbuch
 - Auto Update Funktion
 - Installer Problem wegen falschem Zertifikat
-- letzter geöffneter Eistellungs-Tab öffnen bzw. merken
-- Anzeige der letzten Änderungen
+- letzter ge ffneter Eistellungs-Tab  ffnen bzw. merken
+- Anzeige der letzten  nderungen
 - Erstellen von mehreren Dokumente im docx Format
-- printhiddenText Checkbox automatisch nach Vorgabe füllen!? in PDF erweiterter Druck einfügen
-  in Schnelldruck einfügen (ausgeblendeter Text bei Lösung immer und bei ohne Lösung nie 	drucken)
+- printhiddenText Checkbox automatisch nach Vorgabe f llen!? in PDF erweiterter Druck einf gen
+  in Schnelldruck einf gen (ausgeblendeter Text bei L sung immer und bei ohne L sung nie 	drucken)
 
 Ideen:
 - Quick Search vs. Extensive Search
