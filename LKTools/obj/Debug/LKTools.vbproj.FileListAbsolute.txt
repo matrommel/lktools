@@ -89,3 +89,29 @@ C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Debug\LKTools.vbproj.Co
 C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Debug\LKTools.dll
 C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Debug\LKTools.xml
 C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Debug\LKTools.pdb
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\LKTools.dll.config
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\LKTools.dll
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\LKTools.pdb
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\LKTools.xml
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\LKTools.dll.manifest
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\LKTools.vsto
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\Microsoft.Office.Tools.v4.0.Framework.dll
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\Microsoft.VisualStudio.Tools.Applications.Runtime.dll
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.vbproj.AssemblyReference.cache
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\Interop.MSXML2.dll
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\Interop.WinHttp.dll
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.vbproj.ResolveComReference.cache
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.frmChangelog.resources
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.frmPDFExport.resources
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.frmSettings.resources
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.frmIHK.resources
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.LKTool.resources
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.Resources.resources
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.vbproj.GenerateResource.cache
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.vbproj.CoreCompileInputs.cache
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.vbproj.Up2Date
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.dll
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.xml
+C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.pdb

@@ -34,7 +34,14 @@ LKTools
 </member>
 <member name="P:LKTools.My.Resources.Resources.Changelog">
 <summary>
-  Sucht eine lokalisierte Zeichenfolge, die V.0.4.19.0
+  Sucht eine lokalisierte Zeichenfolge, die V.0.4.20.0
+# Features:
+- Karierte Vorlage hÃ¤ngt sich auf falls nur eine Zeile eingegeben wird.
+
+# Bugfixes:
+- neues Testzertifikat
+
+V.0.4.19.0
 # Features:
 
 # Bugfixes:
@@ -51,24 +58,12 @@ V.0.4.18.0
 - Karierte Vorlage ist nun als Bild einf gbar
 
 # Bugfixes:
-- Bei Verwendung der Revisionshistorie wird eine etwaige &quot;Gegen berliegende Seite&quot; aus dem Seitenlayout ebenfalls  bersprungen.
-- Neues Testzertifikat erstellt
-
-V.0.4.17.0
-# Features:
-
-# Bugfixes:
-- Bei Verwendung der Revisi [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+- Bei Verwendung der Revisionshistorie wird eine etwaige &quot;Gegen berliegende Seite&quot; aus dem  [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
 </summary>
 </member>
 <member name="P:LKTools.My.Resources.Resources.ColorSelection">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:LKTools.My.Resources.Resources.dot_matrix_4x4">
-<summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Byte[].
 </summary>
 </member>
 <member name="P:LKTools.My.Resources.Resources.Dots">
@@ -164,6 +159,11 @@ V.0.4.17.0
 <member name="P:LKTools.My.Resources.Resources.RuledTemplate">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LKTools.My.Resources.Resources.smallDot">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Byte[].
 </summary>
 </member>
 <member name="P:LKTools.My.Resources.Resources.StatusAnnotations_Warning_32xLG_color">
