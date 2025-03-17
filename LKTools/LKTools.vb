@@ -348,543 +348,114 @@ Public Class LKTool
         rootElem.AppendChild(xmlDoc.CreateTextNode(vbCrLf)) 'Zeilenumbruch
     End Sub
 
+
     'Update LKTools
     Public Sub Update_XML()
-        Dim objDom As MSXML2.DOMDocument60
-        Dim objRootElem As MSXML2.IXMLDOMElement
-        Dim objMemberName As MSXML2.IXMLDOMElement
-        Dim root As Object
-        Dim point As MSXML2.IXMLDOMNode
-        Dim UpdateXML As Boolean
-
-        objDom = New MSXML2.DOMDocument60
-        objDom.async = False 'Dokument wird erst vollständig geladen
-
-        'Create all child elements if not exist
-        If objDom.load(LKTool.myFile) Then
-            ' get root element
-            objRootElem = objDom.documentElement
-            root = objDom.documentElement
-            point = root.firstChild
-
-            If point.selectSingleNode("//LKToolsVersion") Is Nothing Then
-                objMemberName = objDom.createElement("LKToolsVersion")
-                objRootElem.appendChild(objMemberName)
-                objMemberName.text = My.Application.Info.Version.ToString
-                objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                UpdateXML = True
-                Show_Changelog() 'Show the new features on sourceforge page
-            ElseIf point.selectSingleNode("//LKToolsVersion").text <> My.Application.Info.Version.ToString Then
-                objMemberName = point.selectSingleNode("//LKToolsVersion")
-                ' objDom.selectSingleNode("LKToolsVersion")
-                'getElementsByTagName("LKToolsVersion")
-                objMemberName.text = My.Application.Info.Version.ToString
-                UpdateXML = True
-                Show_Changelog() 'Show the new features on sourceforge page
-            Else
-                UpdateXML = False
-            End If
-
-            If UpdateXML = True Then
-
-                'Globale Variablen Definieren
-                'Allgemein
-                If point.selectSingleNode("//ColorVisible") Is Nothing Then
-                    objMemberName = objDom.createElement("ColorVisible")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "255" 'Saved as OLE Color
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//ColorHidden") Is Nothing Then
-                    objMemberName = objDom.createElement("ColorHidden")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "16711679" 'Saved as OLE Color
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//ObjectTextColor") Is Nothing Then
-                    objMemberName = objDom.createElement("ObjectTextColor")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "0" 'Saved as OLE Color
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//ShowInformation") Is Nothing Then
-                    objMemberName = objDom.createElement("ShowInformation")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//HideShapes") Is Nothing Then
-                    objMemberName = objDom.createElement("HideShapes")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//HideLines") Is Nothing Then
-                    objMemberName = objDom.createElement("HideLines")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//HideUnderline") Is Nothing Then
-                    objMemberName = objDom.createElement("HideUnderline")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//InformAboutHiddenObjects") Is Nothing Then
-                    objMemberName = objDom.createElement("InformAboutHiddenObjects")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//InformAboutHiddenObjectsTime") Is Nothing Then
-                    objMemberName = objDom.createElement("InformAboutHiddenObjectsTime")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "3"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                'Objekte --> Vorlagen
-                If point.selectSingleNode("//RedTextboxButton") Is Nothing Then
-                    objMemberName = objDom.createElement("RedTextboxButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//RevisionPageButton") Is Nothing Then
-                    objMemberName = objDom.createElement("RevisionPageButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//chkRevisionPrint") Is Nothing Then
-                    objMemberName = objDom.createElement("chkRevisionPrint")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//ExcerciseButton") Is Nothing Then
-                    objMemberName = objDom.createElement("ExcerciseButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//ExamButton") Is Nothing Then
-                    objMemberName = objDom.createElement("ExamButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                '## ruled template
-                If point.selectSingleNode("//RuledButton") Is Nothing Then
-                    objMemberName = objDom.createElement("RuledButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//RuledSpacing") Is Nothing Then
-                    objMemberName = objDom.createElement("RuledSpacing")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "0,75"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//RuledRows") Is Nothing Then
-                    objMemberName = objDom.createElement("RuledRows")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "10"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//RuledStyle") Is Nothing Then
-                    objMemberName = objDom.createElement("RuledStyle")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "1"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//RuledStyleWidth") Is Nothing Then
-                    objMemberName = objDom.createElement("RuledStyleWidth")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "4"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                '##graph Template
-                If point.selectSingleNode("//GraphButton") Is Nothing Then
-                    objMemberName = objDom.createElement("GraphButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//GraphWidth") Is Nothing Then
-                    objMemberName = objDom.createElement("GraphWidth")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "0,5"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//GraphRows") Is Nothing Then
-                    objMemberName = objDom.createElement("GraphRows")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "10"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-
-                If point.selectSingleNode("//GraphAsPicture") Is Nothing Then
-                    objMemberName = objDom.createElement("GraphAsPicture")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                'Objekte --> Aufgaben
-                '## MC
-                If point.selectSingleNode("//MCButton") Is Nothing Then
-                    objMemberName = objDom.createElement("MCButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//MCRows") Is Nothing Then
-                    objMemberName = objDom.createElement("MCRows")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "1"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//chkMCAllignRight") Is Nothing Then
-                    objMemberName = objDom.createElement("chkMCAllignRight")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                '## True/False
-                If point.selectSingleNode("//TrueFalseButton") Is Nothing Then
-                    objMemberName = objDom.createElement("TrueFalseButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//TrueFalseRows") Is Nothing Then
-                    objMemberName = objDom.createElement("TrueFalseRows")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "1"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//TrueFalseTrueDesc") Is Nothing Then
-                    objMemberName = objDom.createElement("TrueFalseTrueDesc")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "Richtig"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//TrueFalseFalseDesc") Is Nothing Then
-                    objMemberName = objDom.createElement("TrueFalseFalseDesc")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "Falsch"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//TrueFalseReason") Is Nothing Then
-                    objMemberName = objDom.createElement("TrueFalseReason")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//TrueFalseReasonDesc") Is Nothing Then
-                    objMemberName = objDom.createElement("TrueFalseReasonDesc")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "Begründung"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-
-                '## Add Solution
-                If point.selectSingleNode("//AddSolution") Is Nothing Then
-                    objMemberName = objDom.createElement("AddSolution")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//SolutionDescription") Is Nothing Then
-                    objMemberName = objDom.createElement("SolutionDescription")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "Lösungs- vorschlag"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                'Objekte --> Noten
-                If point.selectSingleNode("//GradeButton") Is Nothing Then
-                    objMemberName = objDom.createElement("GradeButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//factorGrade1") Is Nothing Then
-                    objMemberName = objDom.createElement("factorGrade1")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "92"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//factorGrade2") Is Nothing Then
-                    objMemberName = objDom.createElement("factorGrade2")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "81"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//factorGrade3") Is Nothing Then
-                    objMemberName = objDom.createElement("factorGrade3")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "67"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//factorGrade4") Is Nothing Then
-                    objMemberName = objDom.createElement("factorGrade4")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "50"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//factorGrade5") Is Nothing Then
-                    objMemberName = objDom.createElement("factorGrade5")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "30"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//GradeScaleRounding") Is Nothing Then
-                    objMemberName = objDom.createElement("GradeScaleRounding")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//GradeScaleExact") Is Nothing Then
-                    objMemberName = objDom.createElement("GradeScaleExact")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                'Objekte --> Pfad
-
-                If point.selectSingleNode("//PathButton") Is Nothing Then
-                    objMemberName = objDom.createElement("PathButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//PathOption") Is Nothing Then
-                    objMemberName = objDom.createElement("PathOption")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "1" '1 = Same folder 2 = Subfolder 3 = Path
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//PathNumberFolders") Is Nothing Then
-                    objMemberName = objDom.createElement("PathNumberFolders")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "1" '1 = Same folder 2 = Subfolder 3 = Path
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//PathAddDocumentName") Is Nothing Then
-                    objMemberName = objDom.createElement("PathAddDocumentName")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                '## Objekte --> Präsentation
-                If point.selectSingleNode("//ShowOverlayFunction") Is Nothing Then
-
-                    objMemberName = objDom.createElement("ShowOverlayFunction")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-                End If
-
-                If point.selectSingleNode("//ColorOverlay") Is Nothing Then
-                    objMemberName = objDom.createElement("ColorOverlay")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "15191472" 'Saved as OLE Color
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-
-                If point.selectSingleNode("//OverlayTransparency") Is Nothing Then
-                    objMemberName = objDom.createElement("OverlayTransparency")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "0"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                'Ausgabe
-                If point.selectSingleNode("//QuickPrint") Is Nothing Then
-                    objMemberName = objDom.createElement("QuickPrint")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//PrintSolution") Is Nothing Then
-                    objMemberName = objDom.createElement("PrintSolution")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//PrintNoSolution") Is Nothing Then
-                    objMemberName = objDom.createElement("PrintNoSolution")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//pdfExportSettings") Is Nothing Then
-                    objMemberName = objDom.createElement("pdfExportSettings")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "1" '1 = Same folder 2 = Subfolder 3 = Path
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//pdfSolutionText") Is Nothing Then
-                    objMemberName = objDom.createElement("pdfSolutionText")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "_Lösung"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//pdfNoSolutionText") Is Nothing Then
-                    objMemberName = objDom.createElement("pdfNoSolutionText")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "_Schüler"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//pdfSubFolderText") Is Nothing Then
-                    objMemberName = objDom.createElement("pdfSubFolderText")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "PDF"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-
-                If point.selectSingleNode("//pdfPathText") Is Nothing Then
-                    objMemberName = objDom.createElement("pdfPathText")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "c:" & Environ("HOMEPATH")
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//ExtendedPDFButton") Is Nothing Then
-                    objMemberName = objDom.createElement("ExtendedPDFButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//ShowExtendedPDFSettings") Is Nothing Then
-                    objMemberName = objDom.createElement("ShowExtendedPDFSettings")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//chkPDFExportEqual") Is Nothing Then
-                    objMemberName = objDom.createElement("chkPDFExportEqual")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//chkPDFMarkupsSolution") Is Nothing Then
-                    objMemberName = objDom.createElement("chkPDFMarkupsSolution")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//chkPDFMarkupsNoSolution") Is Nothing Then
-                    objMemberName = objDom.createElement("chkPDFMarkupsNoSolution")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//chkOpenPDFFolder") Is Nothing Then
-                    objMemberName = objDom.createElement("chkOpenPDFFolder")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//chkDescriptionPositionSuffix") Is Nothing Then
-                    objMemberName = objDom.createElement("chkDescriptionPositionSuffix")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "True"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//chkPrintHiddenTextButton") Is Nothing Then
-                    objMemberName = objDom.createElement("chkPrintHiddenTextButton")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "False"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-
-                'Update
-                If point.selectSingleNode("//UpdateInterval") Is Nothing Then
-                    objMemberName = objDom.createElement("UpdateInterval")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = "30"
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-
-                If point.selectSingleNode("//LastUpdate") Is Nothing Then
-                    objMemberName = objDom.createElement("LastUpdate")
-                    objRootElem.appendChild(objMemberName)
-                    objMemberName.text = Now()
-                    objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-                End If
-            End If
-
-            ' Saves XML data to disk.
-            objDom.save(LKTool.myFile)
-            objDom = Nothing
+        Dim xmlDoc As New XmlDocument()
+        Dim updateXML As Boolean = False
+
+        xmlDoc.Load(LKTool.myFile)
+
+        ' Check and update the LKToolsVersion
+        Dim rootElem As XmlElement = xmlDoc.DocumentElement
+        Dim versionNode As Xml.XmlNode = xmlDoc.SelectSingleNode("//LKToolsVersion")
+
+        If versionNode Is Nothing Then
+            AddElement(xmlDoc, rootElem, "LKToolsVersion", My.Application.Info.Version.ToString())
+            updateXML = True
+            Show_Changelog()
+        ElseIf versionNode.InnerText <> My.Application.Info.Version.ToString() Then
+            versionNode.InnerText = My.Application.Info.Version.ToString()
+            updateXML = True
+            Show_Changelog()
         End If
 
+        ' Define a list of elements with their default values
+        Dim elements As Dictionary(Of String, String) = New Dictionary(Of String, String) From {
+        {"ColorVisible", "255"},
+        {"ColorHidden", "16711679"},
+        {"ObjectTextColor", "0"},
+        {"ShowInformation", "True"},
+        {"HideShapes", "True"},
+        {"HideLines", "True"},
+        {"HideUnderline", "True"},
+        {"InformAboutHiddenObjects", "True"},
+        {"InformAboutHiddenObjectsTime", "3"},
+        {"RedTextboxButton", "True"},
+        {"RevisionPageButton", "False"},
+        {"chkRevisionPrint", "True"},
+        {"ExcerciseButton", "True"},
+        {"ExamButton", "True"},
+        {"RuledButton", "True"},
+        {"RuledSpacing", "0,75"},
+        {"RuledRows", "10"},
+        {"RuledStyle", "1"},
+        {"RuledStyleWidth", "4"},
+        {"GraphButton", "True"},
+        {"GraphWidth", "0,5"},
+        {"GraphRows", "10"},
+        {"GraphAsPicture", "False"},
+        {"MCButton", "True"},
+        {"MCRows", "1"},
+        {"chkMCAllignRight", "False"},
+        {"TrueFalseButton", "True"},
+        {"TrueFalseRows", "1"},
+        {"TrueFalseTrueDesc", "Richtig"},
+        {"TrueFalseFalseDesc", "Falsch"},
+        {"TrueFalseReason", "True"},
+        {"TrueFalseReasonDesc", "Begründung"},
+        {"AddSolution", "True"},
+        {"SolutionDescription", "Lösungs- vorschlag"},
+        {"GradeButton", "True"},
+        {"factorGrade1", "92"},
+        {"factorGrade2", "81"},
+        {"factorGrade3", "67"},
+        {"factorGrade4", "50"},
+        {"factorGrade5", "30"},
+        {"GradeScaleRounding", "True"},
+        {"GradeScaleExact", "True"},
+        {"PathButton", "False"},
+        {"PathOption", "1"},
+        {"PathNumberFolders", "1"},
+        {"PathAddDocumentName", "True"},
+        {"ShowOverlayFunction", "False"},
+        {"ColorOverlay", "15191472"},
+        {"OverlayTransparency", "0"},
+        {"QuickPrint", "True"},
+        {"PrintSolution", "True"},
+        {"PrintNoSolution", "True"},
+        {"pdfExportSettings", "1"},
+        {"pdfSolutionText", "_Lösung"},
+        {"pdfNoSolutionText", "_Schüler"},
+        {"pdfSubFolderText", "PDF"},
+        {"pdfPathText", "c:" & Environ("HOMEPATH")},
+        {"ExtendedPDFButton", "False"},
+        {"ShowExtendedPDFSettings", "False"},
+        {"chkPDFExportEqual", "False"},
+        {"chkPDFMarkupsSolution", "False"},
+        {"chkPDFMarkupsNoSolution", "False"},
+        {"chkOpenPDFFolder", "False"},
+        {"chkDescriptionPositionSuffix", "True"},
+        {"chkPrintHiddenTextButton", "False"},
+        {"UpdateInterval", "30"},
+        {"LastUpdate", Now().ToString()}
+    }
+
+        ' Add or update elements
+        For Each kvp In elements
+            If xmlDoc.SelectSingleNode("//" & kvp.Key) Is Nothing Then
+                AddElement(xmlDoc, rootElem, kvp.Key, kvp.Value)
+                updateXML = True
+            End If
+        Next
+
+        ' Save changes if needed
+        If updateXML Then
+            xmlDoc.Save(LKTool.myFile)
+        End If
     End Sub
+
+
 
     'Read der XML Datei
     Public Sub LoadXML()
