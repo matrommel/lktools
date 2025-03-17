@@ -1,3 +1,12 @@
+V.0.4.22.0
+# Features:
+- 
+
+# Bugfixes:
+- neues Testzertifikat
+- Refactoring XML Datei für die Speicherung von User Einstellungen
+- karierter Vorlage als Bild hängt sich auf
+
 V.0.4.21.0
 # Features:
 - Karierte Vorlage hängt sich auf falls nur eine Zeile eingegeben wird.

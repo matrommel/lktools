@@ -600,10 +600,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LKTools_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LKTools_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>EC5E6A31EA29A3CE3141598843EE1490224EE4CE</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>EE8C1DD7461D76D98CEDDE31B0A0E0CA3AB5C7E1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
