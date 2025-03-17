@@ -3,7 +3,8 @@
 Imports Microsoft.Office.Tools.Ribbon
 Imports Microsoft.Office.Core
 Imports Microsoft.Office.Interop.Word
-Imports MSXML2
+'Imports MSXML2
+Imports System.Xml
 Imports System.IO
 Imports System.IO.File
 Imports System.Reflection
@@ -16,6 +17,8 @@ Imports System.Math
 'Sync MABRDE
 
 Public Class LKTool
+
+
     '#######################################################
     'LK-Tools - make lessons preperation more efficient
     '#######################################################
@@ -227,389 +230,122 @@ Public Class LKTool
         Return properties.Item("content status").Value
     End Function
 
-    'Create the XML File
     Public Sub Create_XML()
-        Dim objDom As MSXML2.DOMDocument60
-        Dim objVersion As MSXML2.IXMLDOMProcessingInstruction
-        Dim objRootElem As MSXML2.IXMLDOMElement
-        Dim objMemberName As MSXML2.IXMLDOMElement
+        Dim xmlDoc As New XmlDocument()
 
-        objDom = New MSXML2.DOMDocument60
-
-        'Set the XML Version
-        objVersion = objDom.createProcessingInstruction("xml", "version=""1.0"" encoding=""utf-8""")
-        objDom.appendChild(objVersion)
+        ' Set the XML Version
+        Dim xmlDeclaration As XmlDeclaration = xmlDoc.CreateXmlDeclaration("1.0", "utf-8", Nothing)
+        xmlDoc.AppendChild(xmlDeclaration)
 
         ' Creates root element
-        objRootElem = objDom.createElement("LKTools")
-        objDom.appendChild(objRootElem)
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        'Globale Variablen Definieren
-        'Allgmein
-        objMemberName = objDom.createElement("LKToolsVersion")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = My.Application.Info.Version.ToString
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("ColorVisible")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "255" 'Saved as OLE Color
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("ColorHidden")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "16711679" 'Saved as OLE Color
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("ObjectTextColor")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "0" 'Saved as OLE Color
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("ShowInformation")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("HideShapes")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("HideLines")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("HideUnderline")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("InformAboutHiddenObjects")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("InformAboutHiddenObjectsTime")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "3"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        'Objekte --> Vorlagen
-        objMemberName = objDom.createElement("RedTextboxButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("RevisionPageButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("chkRevisionPrint")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("ExcerciseButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("ExamButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        '##Graph Template
-        objMemberName = objDom.createElement("GraphButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("GraphWidth")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "0,5"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("GraphRows")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "10"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("GraphAsPicture")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-
-
-        '##Ruled Template
-        objMemberName = objDom.createElement("RuledButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("RuledSpacing")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "0,75"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("RuledRows")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "10"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("RuledStyle")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "1"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("RuledStyleWidth")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "4"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        'Objekte --> Aufgaben
-        '##MC Template
-        objMemberName = objDom.createElement("MCButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("MCRows")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "1"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("chkMCAllignRight")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        '##True False Template
-
-
-        objMemberName = objDom.createElement("TrueFalseButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("TrueFalseRows")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "1"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("TrueFalseTrueDesc")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "Richtig"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("TrueFalseFalseDesc")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "Falsch"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("TrueFalseReason")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("TrueFalseReasonDesc")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "Begründung"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        '##Add Solution Template
-        objMemberName = objDom.createElement("AddSolution")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("SolutionDescription")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "Lösungs- vorschlag"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        'Objekte --> Noten
-        objMemberName = objDom.createElement("GradeButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("factorGrade1")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "92"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("factorGrade2")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "81"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("factorGrade3")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "67"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("factorGrade4")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "50"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("factorGrade5")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "30"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("GradeScaleRounding")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("GradeScaleExact")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        '## Objekte --> Überlagerung
-        objMemberName = objDom.createElement("ShowOverlayFunction")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("ColorOverlay")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "15191472" 'Saved as OLE Color
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-
-        objMemberName = objDom.createElement("OverlayTransparency")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "0"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        'Pfad
-        objMemberName = objDom.createElement("PathButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("PathOption")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "1" '1 = Full Path 2 = rel Path 3 = No Path
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("PathNumberFolders")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "1"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("PathAddDocumentName")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        'Ausgabe
-        objMemberName = objDom.createElement("QuickPrint")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("PrintSolution")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("PrintNoSolution")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("pdfExportSettings")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "1" '1 = Same Folder 2 = Subfolder 3 = Path
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("pdfSolutionText")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "_Lösung"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("pdfNoSolutionText")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "_Schüler"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("pdfSubFolderText")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "PDF"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("ExtendedPDFButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("ShowExtendedPDFSettings")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("chkPDFExportEqual")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("chkPDFMarkupsSolution")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("chkPDFMarkupsNoSolution")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("chkOpenPDFFolder")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("chkDescriptionPositionSuffix")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "True"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("chkPrintHiddenTextButton")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "False"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        'Get local document folder
-        objMemberName = objDom.createElement("pdfPathText")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "c:" & Environ("HOMEPATH")
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        'Update
-        objMemberName = objDom.createElement("UpdateInterval")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = "30"
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
-        objMemberName = objDom.createElement("LastUpdate")
-        objRootElem.appendChild(objMemberName)
-        objMemberName.text = Now()
-        objRootElem.appendChild(objDom.createTextNode(vbCrLf)) 'Zeilenumbruch
-
+        Dim rootElem As XmlElement = xmlDoc.CreateElement("LKTools")
+        xmlDoc.AppendChild(rootElem)
+
+        ' Globale Variablen Definieren
+        ' Allgemein
+        AddElement(xmlDoc, rootElem, "LKToolsVersion", My.Application.Info.Version.ToString())
+        AddElement(xmlDoc, rootElem, "ColorVisible", "255") ' Saved as OLE Color
+        AddElement(xmlDoc, rootElem, "ColorHidden", "16711679") ' Saved as OLE Color
+        AddElement(xmlDoc, rootElem, "ObjectTextColor", "0") ' Saved as OLE Color
+        AddElement(xmlDoc, rootElem, "ShowInformation", "True")
+        AddElement(xmlDoc, rootElem, "HideShapes", "True")
+        AddElement(xmlDoc, rootElem, "HideLines", "True")
+        AddElement(xmlDoc, rootElem, "HideUnderline", "True")
+        AddElement(xmlDoc, rootElem, "InformAboutHiddenObjects", "True")
+        AddElement(xmlDoc, rootElem, "InformAboutHiddenObjectsTime", "3")
+
+        ' Objekte --> Vorlagen
+        AddElement(xmlDoc, rootElem, "RedTextboxButton", "True")
+        AddElement(xmlDoc, rootElem, "RevisionPageButton", "False")
+        AddElement(xmlDoc, rootElem, "chkRevisionPrint", "True")
+        AddElement(xmlDoc, rootElem, "ExcerciseButton", "True")
+        AddElement(xmlDoc, rootElem, "ExamButton", "True")
+
+        ' ##Graph Template
+        AddElement(xmlDoc, rootElem, "GraphButton", "True")
+        AddElement(xmlDoc, rootElem, "GraphWidth", "0,5")
+        AddElement(xmlDoc, rootElem, "GraphRows", "10")
+        AddElement(xmlDoc, rootElem, "GraphAsPicture", "False")
+
+        ' ##Ruled Template
+        AddElement(xmlDoc, rootElem, "RuledButton", "True")
+        AddElement(xmlDoc, rootElem, "RuledSpacing", "0,75")
+        AddElement(xmlDoc, rootElem, "RuledRows", "10")
+        AddElement(xmlDoc, rootElem, "RuledStyle", "1")
+        AddElement(xmlDoc, rootElem, "RuledStyleWidth", "4")
+
+        ' Objekte --> Aufgaben
+        ' ##MC Template
+        AddElement(xmlDoc, rootElem, "MCButton", "True")
+        AddElement(xmlDoc, rootElem, "MCRows", "1")
+        AddElement(xmlDoc, rootElem, "chkMCAllignRight", "False")
+
+        ' ##True False Template
+        AddElement(xmlDoc, rootElem, "TrueFalseButton", "True")
+        AddElement(xmlDoc, rootElem, "TrueFalseRows", "1")
+        AddElement(xmlDoc, rootElem, "TrueFalseTrueDesc", "Richtig")
+        AddElement(xmlDoc, rootElem, "TrueFalseFalseDesc", "Falsch")
+        AddElement(xmlDoc, rootElem, "TrueFalseReason", "True")
+        AddElement(xmlDoc, rootElem, "TrueFalseReasonDesc", "Begründung")
+
+        ' ##Add Solution Template
+        AddElement(xmlDoc, rootElem, "AddSolution", "True")
+        AddElement(xmlDoc, rootElem, "SolutionDescription", "Lösungs- vorschlag")
+
+        ' Objekte --> Noten
+        AddElement(xmlDoc, rootElem, "GradeButton", "True")
+        AddElement(xmlDoc, rootElem, "factorGrade1", "92")
+        AddElement(xmlDoc, rootElem, "factorGrade2", "81")
+        AddElement(xmlDoc, rootElem, "factorGrade3", "67")
+        AddElement(xmlDoc, rootElem, "factorGrade4", "50")
+        AddElement(xmlDoc, rootElem, "factorGrade5", "30")
+        AddElement(xmlDoc, rootElem, "GradeScaleRounding", "True")
+        AddElement(xmlDoc, rootElem, "GradeScaleExact", "True")
+
+        ' ## Objekte --> Überlagerung
+        AddElement(xmlDoc, rootElem, "ShowOverlayFunction", "False")
+        AddElement(xmlDoc, rootElem, "ColorOverlay", "15191472") ' Saved as OLE Color
+        AddElement(xmlDoc, rootElem, "OverlayTransparency", "0")
+
+        ' Pfad
+        AddElement(xmlDoc, rootElem, "PathButton", "False")
+        AddElement(xmlDoc, rootElem, "PathOption", "1") ' 1 = Full Path 2 = rel Path 3 = No Path
+        AddElement(xmlDoc, rootElem, "PathNumberFolders", "1")
+        AddElement(xmlDoc, rootElem, "PathAddDocumentName", "True")
+
+        ' Ausgabe
+        AddElement(xmlDoc, rootElem, "QuickPrint", "True")
+        AddElement(xmlDoc, rootElem, "PrintSolution", "True")
+        AddElement(xmlDoc, rootElem, "PrintNoSolution", "True")
+        AddElement(xmlDoc, rootElem, "pdfExportSettings", "1") ' 1 = Same Folder 2 = Subfolder 3 = Path
+        AddElement(xmlDoc, rootElem, "pdfSolutionText", "_Lösung")
+        AddElement(xmlDoc, rootElem, "pdfNoSolutionText", "_Schüler")
+        AddElement(xmlDoc, rootElem, "pdfSubFolderText", "PDF")
+        AddElement(xmlDoc, rootElem, "ExtendedPDFButton", "False")
+        AddElement(xmlDoc, rootElem, "ShowExtendedPDFSettings", "False")
+        AddElement(xmlDoc, rootElem, "chkPDFExportEqual", "False")
+        AddElement(xmlDoc, rootElem, "chkPDFMarkupsSolution", "False")
+        AddElement(xmlDoc, rootElem, "chkPDFMarkupsNoSolution", "False")
+        AddElement(xmlDoc, rootElem, "chkOpenPDFFolder", "False")
+        AddElement(xmlDoc, rootElem, "chkDescriptionPositionSuffix", "True")
+        AddElement(xmlDoc, rootElem, "chkPrintHiddenTextButton", "False")
+
+        ' Get local document folder
+        AddElement(xmlDoc, rootElem, "pdfPathText", "c:" & Environ("HOMEPATH"))
+
+        ' Update
+        AddElement(xmlDoc, rootElem, "UpdateInterval", "30")
+        AddElement(xmlDoc, rootElem, "LastUpdate", Now().ToString())
 
         ' Saves XML data to disk.
-        objDom.save(LKTool.myFile)
-        objDom = Nothing
+        xmlDoc.Save("your_file_path_here.xml")
+    End Sub
 
+    Private Sub AddElement(xmlDoc As XmlDocument, rootElem As XmlElement, name As String, text As String)
+        Dim elem As XmlElement = xmlDoc.CreateElement(name)
+        elem.InnerText = text
+        rootElem.AppendChild(elem)
+        rootElem.AppendChild(xmlDoc.CreateTextNode(vbCrLf)) 'Zeilenumbruch
     End Sub
 
     'Update LKTools
@@ -1671,8 +1407,11 @@ Public Class LKTool
                     'oShp.Height = (GraphRowsTemp * 26) + 10
                     oShp.Height = (GraphRowsTemp * 14.175)
 
+                    Dim wert = Directory.GetCurrentDirectory()
 
-                    oShp.Fill.UserTextured("C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\Resources\smalldot.svg")
+                    oShp.Fill.UserTextured("..\..\Resources\smallDot.svg")
+
+
 
                 End If
             Else
@@ -3949,7 +3688,7 @@ Public Class LKTool
             End If
 
         Else
-                MsgBox("Sorry, diese Funktion ist nur für .docx Dokumente möglich.")
+            MsgBox("Sorry, diese Funktion ist nur für .docx Dokumente möglich.")
         End If
 
 
@@ -4180,7 +3919,7 @@ Public Class LKTool
             End If
 
         Else
-                MsgBox("Sorry, diese Funktion ist nur für .docx Dokumente möglich.")
+            MsgBox("Sorry, diese Funktion ist nur für .docx Dokumente möglich.")
         End If
 
     End Sub
