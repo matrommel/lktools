@@ -42,7 +42,7 @@
     <PublishUrl>C:\Users\mromm\Downloads\LKToolsGit\</PublishUrl>
     <InstallUrl />
     <TargetCulture>de</TargetCulture>
-    <ApplicationVersion>0.4.22.0</ApplicationVersion>
+    <ApplicationVersion>0.4.23.0</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -603,10 +603,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LKTools_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LKTools_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>EE8C1DD7461D76D98CEDDE31B0A0E0CA3AB5C7E1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>1D469A20A0EBBB6D8AA0727C9764FCEB72F3B342</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
