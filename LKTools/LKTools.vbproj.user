@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PublishUrlHistory>C:\Users\mromm\Downloads\LKToolsGit\</PublishUrlHistory>
     <InstallUrlHistory />
-    <SupportUrlHistory>https://sourceforge.net/projects/lktools/</SupportUrlHistory>
+    <SupportUrlHistory>https://github.com/matrommel/lktools/issues|https://sourceforge.net/projects/lktools/</SupportUrlHistory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <StartAction>Project</StartAction>

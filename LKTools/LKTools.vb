@@ -900,6 +900,26 @@ Public Class LKTool
         End If
     End Sub
 
+
+
+
+    ' Hilfsfunktion zur Extraktion der Ressource
+    Private Function ExtractEmbeddedResource(resourceName As String, outputPath As String) As Boolean
+        Try
+            Dim assembly As Assembly = Assembly.GetExecutingAssembly()
+            Using resourceStream As Stream = assembly.GetManifestResourceStream(resourceName)
+                If resourceStream Is Nothing Then Return False
+                Using fileStream As FileStream = File.Create(outputPath)
+                    resourceStream.CopyTo(fileStream)
+                End Using
+            End Using
+            Return True
+        Catch ex As Exception
+            MsgBox("Fehler beim Extrahieren der Ressource: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
     'Add the graph template 
     Private Sub btnGraphTemplate_Click(sender As Object, e As RibbonControlEventArgs) Handles btnGraphTemplate.Click
         '#######################################################
@@ -955,6 +975,9 @@ Public Class LKTool
                     Dim oShp As Word.Shape 'check if shape already exists.
                     Dim leftCursor As Single 'Needed for calculating the correct with of the grid
                     Dim topCursor As Single 'Needed for calculating the correct with of the grid
+                    Dim image As Image = LKTools.My.Resources.Resources.smallDot
+                    Dim tempImagePath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "smallDot.png")
+
 
                     'Get current cursor position
                     leftCursor = cursor.Information(Word.WdInformation.wdHorizontalPositionRelativeToPage)
@@ -978,11 +1001,13 @@ Public Class LKTool
                     'oShp.Height = (GraphRowsTemp * 26) + 10
                     oShp.Height = (GraphRowsTemp * 14.175)
 
-                    Dim wert = Directory.GetCurrentDirectory()
+                    ' Speichern des Bildes als temporäre Datei
+                    image.Save(tempImagePath)
+                    ' Bild einfügen
+                    oShp.Fill.UserTextured(tempImagePath)
 
-                    oShp.Fill.UserTextured("..\..\Resources\smallDot.svg")
-
-
+                    ' Optional: Lösche die temporäre Bilddatei, wenn du sie nicht mehr brauchst
+                    File.Delete(tempImagePath)
 
                 End If
             Else
