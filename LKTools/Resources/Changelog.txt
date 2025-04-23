@@ -1,3 +1,10 @@
+V.0.4.25.0 (Aktuell in Umsetzung!)
+# Features:
+- 
+
+# Bugfixes:
+- Updates are now checked on Github
+
 V.0.4.24.0
 # Features:
 - 

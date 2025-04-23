@@ -12,7 +12,8 @@ Imports System.Drawing
 Imports System.Diagnostics
 Imports System.Text.RegularExpressions 'Need for checking the
 Imports System.Math
-
+Imports System.Net
+Imports Newtonsoft.Json.Linq
 
 'Sync MABRDE
 
@@ -2299,30 +2300,64 @@ Public Class LKTool
         End If
     End Sub
 
-    'Sub check for updates
-    Public Sub Check_Updates(i As Integer)
-        Dim url As String
-        Dim urlDownload As String
-        Dim version As String
+    Public Sub Check_Updates(showNoUpdateMessage As Integer)
+        Dim latestVersion As String
+        Dim currentVersion As String
+        Dim apiUrl As String
+        Dim jsonResponse As String
         Dim result As MsgBoxResult
 
-        UpdateLastUpdate() 'update the last "update"-date in the XML
-        version = String.Format(My.Application.Info.Version.ToString) 'Get the current LKTools Version
+        ' Ensure TLS 1.2 is enabled
+        System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12
 
-        url = "https://sourceforge.net/projects/lktools/files/LKTools%20V." & version & ".zip/download"
-        urlDownload = "https://sourceforge.net/projects/lktools/files/latest/download"
+        ' Update the last "update" date in the XML
+        UpdateLastUpdate()
 
-        If Not URLExists(url) Then
+        ' Get the current version of LKTools
+        currentVersion = My.Application.Info.Version.ToString
+
+        ' GitHub API URL for the latest release of your repository
+        apiUrl = "https://api.github.com/repos/matrommel/lktools/releases/latest"
+
+        ' Fetch the latest release information
+        jsonResponse = GetHttpResponse(apiUrl)
+
+        ' Parse the JSON response to extract the latest version tag
+        latestVersion = ParseJsonForVersion(jsonResponse)
+
+        ' Compare versions
+        MsgBox(currentVersion + latestVersion)
+        If latestVersion > currentVersion Then
             result = MsgBox("Ein Neues Update ist verfügbar. Möchten Sie es jetzt herunterladen?", vbYesNo, "LKTools")
             If result = vbYes Then
-                System.Diagnostics.Process.Start(urlDownload)
+                ' Open the latest release page in the default browser
+                System.Diagnostics.Process.Start("https://github.com/matrommel/lktools/releases/latest")
             End If
         Else
-            If i = 1 Then
+            If showNoUpdateMessage = 1 Then
                 MsgBox("Kein Update verfügbar.", MsgBoxStyle.Information, "LKTools")
             End If
         End If
     End Sub
+
+    Private Function GetHttpResponse(url As String) As String
+        Dim request As HttpWebRequest = CType(WebRequest.Create(url), HttpWebRequest)
+        request.Method = "GET"
+        request.UserAgent = "VB.NET-Request"
+
+        Using response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
+            Using reader As New StreamReader(response.GetResponseStream())
+                Return reader.ReadToEnd()
+            End Using
+        End Using
+    End Function
+
+    Private Function ParseJsonForVersion(jsonResponse As String) As String
+        ' Parse JSON using Newtonsoft.Json (Json.NET)
+        Dim json As JObject = JObject.Parse(jsonResponse)
+        Return json("tag_name").ToString()
+    End Function
+
 
     'Sub show changelog
     Public Sub Show_Changelog()

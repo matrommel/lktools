@@ -24,8 +24,8 @@ Partial Class frmSettings
     Private Sub InitializeComponent()
         Dim LKTabs As System.Windows.Forms.TabControl
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSettings))
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.tabSettings = New System.Windows.Forms.TabPage()
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
@@ -322,8 +322,7 @@ Partial Class frmSettings
         LKTabs.Name = "LKTabs"
         LKTabs.SelectedIndex = 0
         Me.HelpProvider1.SetShowHelp(LKTabs, True)
-        LKTabs.Size = New System.Drawing.Size(524, 370)
-        LKTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        LKTabs.Size = New System.Drawing.Size(532, 370)
         LKTabs.TabIndex = 0
         '
         'tabSettings
@@ -340,7 +339,7 @@ Partial Class frmSettings
         Me.tabSettings.Name = "tabSettings"
         Me.tabSettings.Padding = New System.Windows.Forms.Padding(1)
         Me.HelpProvider1.SetShowHelp(Me.tabSettings, False)
-        Me.tabSettings.Size = New System.Drawing.Size(516, 344)
+        Me.tabSettings.Size = New System.Drawing.Size(524, 344)
         Me.tabSettings.TabIndex = 0
         Me.tabSettings.Text = "Allgemein"
         Me.tabSettings.ToolTipText = "Allgemeine Einstellungen"
@@ -676,7 +675,7 @@ Partial Class frmSettings
         Me.tabObjects.Margin = New System.Windows.Forms.Padding(1)
         Me.tabObjects.Name = "tabObjects"
         Me.HelpProvider1.SetShowHelp(Me.tabObjects, False)
-        Me.tabObjects.Size = New System.Drawing.Size(516, 344)
+        Me.tabObjects.Size = New System.Drawing.Size(524, 344)
         Me.tabObjects.TabIndex = 5
         Me.tabObjects.Text = "Objekte"
         '
@@ -2001,29 +2000,29 @@ Partial Class frmSettings
         '
         'GradeGraph
         '
-        ChartArea1.AxisX.IntervalOffset = 1.0R
-        ChartArea1.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
-        ChartArea1.AxisX.IsStartedFromZero = False
-        ChartArea1.AxisX.Maximum = 6.0R
-        ChartArea1.AxisX.Minimum = 1.0R
-        ChartArea1.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
-        ChartArea1.AxisY.MajorGrid.Interval = 0R
-        ChartArea1.CursorX.IntervalOffset = 1.0R
-        ChartArea1.CursorX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
-        ChartArea1.CursorX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
-        ChartArea1.CursorX.LineWidth = 4
-        ChartArea1.Name = "ChartArea1"
-        Me.GradeGraph.ChartAreas.Add(ChartArea1)
+        ChartArea3.AxisX.IntervalOffset = 1.0R
+        ChartArea3.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
+        ChartArea3.AxisX.IsStartedFromZero = False
+        ChartArea3.AxisX.Maximum = 6.0R
+        ChartArea3.AxisX.Minimum = 1.0R
+        ChartArea3.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
+        ChartArea3.AxisY.MajorGrid.Interval = 0R
+        ChartArea3.CursorX.IntervalOffset = 1.0R
+        ChartArea3.CursorX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
+        ChartArea3.CursorX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
+        ChartArea3.CursorX.LineWidth = 4
+        ChartArea3.Name = "ChartArea1"
+        Me.GradeGraph.ChartAreas.Add(ChartArea3)
         Me.HelpProvider1.SetHelpString(Me.GradeGraph, "Anzeige der Notenverteilung in Prozent. Änderung der Noten wirken sich direkt auf" &
         " die Anzeige aus.")
         Me.GradeGraph.Location = New System.Drawing.Point(281, 40)
         Me.GradeGraph.Margin = New System.Windows.Forms.Padding(1)
         Me.GradeGraph.Name = "GradeGraph"
         Me.GradeGraph.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series1.Name = "Series1"
-        Me.GradeGraph.Series.Add(Series1)
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series3.Name = "Series1"
+        Me.GradeGraph.Series.Add(Series3)
         Me.HelpProvider1.SetShowHelp(Me.GradeGraph, True)
         Me.GradeGraph.Size = New System.Drawing.Size(188, 174)
         Me.GradeGraph.TabIndex = 51
@@ -2324,7 +2323,7 @@ Partial Class frmSettings
         Me.tabExport.Name = "tabExport"
         Me.tabExport.Padding = New System.Windows.Forms.Padding(1)
         Me.HelpProvider1.SetShowHelp(Me.tabExport, False)
-        Me.tabExport.Size = New System.Drawing.Size(516, 344)
+        Me.tabExport.Size = New System.Drawing.Size(524, 344)
         Me.tabExport.TabIndex = 2
         Me.tabExport.Text = "Ausgabe"
         Me.tabExport.ToolTipText = "Festlegung der Ausgabe"
@@ -2338,7 +2337,7 @@ Partial Class frmSettings
         Me.tabExportDetail.Margin = New System.Windows.Forms.Padding(1)
         Me.tabExportDetail.Name = "tabExportDetail"
         Me.tabExportDetail.SelectedIndex = 0
-        Me.tabExportDetail.Size = New System.Drawing.Size(514, 342)
+        Me.tabExportDetail.Size = New System.Drawing.Size(522, 342)
         Me.tabExportDetail.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.tabExportDetail.TabIndex = 46
         '
@@ -2355,7 +2354,7 @@ Partial Class frmSettings
         Me.tabExportGeneral.Margin = New System.Windows.Forms.Padding(1)
         Me.tabExportGeneral.Name = "tabExportGeneral"
         Me.tabExportGeneral.Padding = New System.Windows.Forms.Padding(1)
-        Me.tabExportGeneral.Size = New System.Drawing.Size(506, 316)
+        Me.tabExportGeneral.Size = New System.Drawing.Size(514, 316)
         Me.tabExportGeneral.TabIndex = 0
         Me.tabExportGeneral.Text = "Allgemein"
         '
@@ -3000,7 +2999,7 @@ Partial Class frmSettings
         Me.tabUpdate.Name = "tabUpdate"
         Me.tabUpdate.Padding = New System.Windows.Forms.Padding(1)
         Me.HelpProvider1.SetShowHelp(Me.tabUpdate, False)
-        Me.tabUpdate.Size = New System.Drawing.Size(516, 344)
+        Me.tabUpdate.Size = New System.Drawing.Size(524, 344)
         Me.tabUpdate.TabIndex = 3
         Me.tabUpdate.Text = "Update"
         Me.tabUpdate.ToolTipText = "Aktualisierungsinformation"
@@ -3139,7 +3138,7 @@ Partial Class frmSettings
         Me.tabAboutMe.Name = "tabAboutMe"
         Me.tabAboutMe.Padding = New System.Windows.Forms.Padding(1)
         Me.HelpProvider1.SetShowHelp(Me.tabAboutMe, False)
-        Me.tabAboutMe.Size = New System.Drawing.Size(516, 344)
+        Me.tabAboutMe.Size = New System.Drawing.Size(524, 344)
         Me.tabAboutMe.TabIndex = 1
         Me.tabAboutMe.Text = "Über LKTools"
         Me.tabAboutMe.ToolTipText = "Informationen über LKTools"
@@ -3239,10 +3238,10 @@ Partial Class frmSettings
         Me.lblWebPage.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblWebPage.Name = "lblWebPage"
         Me.HelpProvider1.SetShowHelp(Me.lblWebPage, True)
-        Me.lblWebPage.Size = New System.Drawing.Size(114, 13)
+        Me.lblWebPage.Size = New System.Drawing.Size(149, 13)
         Me.lblWebPage.TabIndex = 14
         Me.lblWebPage.TabStop = True
-        Me.lblWebPage.Text = "lktools.sourceforge.net"
+        Me.lblWebPage.Text = "github.com/matrommel/lktools"
         '
         'lblEMail
         '
