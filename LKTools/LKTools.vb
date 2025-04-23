@@ -977,7 +977,7 @@ Public Class LKTool
                     Dim topCursor As Single 'Needed for calculating the correct with of the grid
                     Dim image As Image = LKTools.My.Resources.Resources.smallDot
                     Dim tempImagePath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "smallDot.png")
-
+                    Dim transparency As Double = 0.8
 
                     'Get current cursor position
                     leftCursor = cursor.Information(Word.WdInformation.wdHorizontalPositionRelativeToPage)
@@ -1001,10 +1001,13 @@ Public Class LKTool
                     'oShp.Height = (GraphRowsTemp * 26) + 10
                     oShp.Height = (GraphRowsTemp * 14.175)
 
+                    oShp.ZOrder(MsoZOrderCmd.msoSendBehindText)
+
                     ' Speichern des Bildes als temporäre Datei
                     image.Save(tempImagePath)
                     ' Bild einfügen
                     oShp.Fill.UserTextured(tempImagePath)
+                    oShp.Fill.Transparency = transparency
 
                     ' Optional: Lösche die temporäre Bilddatei, wenn du sie nicht mehr brauchst
                     File.Delete(tempImagePath)

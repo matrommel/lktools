@@ -1563,5 +1563,4 @@ Public Class frmSettings
         lblOverlayExample.ForeColor = System.Drawing.ColorTranslator.FromOle(LKTool.ColorOverlay)
     End Sub
 
-
 End Class
