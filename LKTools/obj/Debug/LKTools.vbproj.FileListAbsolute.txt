@@ -115,3 +115,5 @@ C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.vbproj.Up2Date
 C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.dll
 C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.xml
 C:\Users\mromm\source\repos\lktools\LKTools\obj\Debug\LKTools.pdb
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mromm\source\repos\lktools\LKTools\bin\Debug\Newtonsoft.Json.xml
