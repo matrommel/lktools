@@ -2326,9 +2326,14 @@ Public Class LKTool
         latestVersion = ParseJsonForVersion(jsonResponse)
 
         ' Compare versions
-        MsgBox(currentVersion + latestVersion)
-        If latestVersion > currentVersion Then
-            result = MsgBox("Ein Neues Update ist verfügbar. Möchten Sie es jetzt herunterladen?", vbYesNo, "LKTools")
+        If latestVersion < currentVersion Then
+            result = MsgBox("Ein Neues Update ist verfügbar." &
+                Environment.NewLine &
+                Environment.NewLine &
+                ParseJsonForInformation(jsonResponse) &
+                Environment.NewLine &
+                Environment.NewLine &
+                "Möchten Sie es jetzt herunterladen?", vbYesNo, "LKTools")
             If result = vbYes Then
                 ' Open the latest release page in the default browser
                 System.Diagnostics.Process.Start("https://github.com/matrommel/lktools/releases/latest")
@@ -2356,6 +2361,22 @@ Public Class LKTool
         ' Parse JSON using Newtonsoft.Json (Json.NET)
         Dim json As JObject = JObject.Parse(jsonResponse)
         Return json("tag_name").ToString()
+    End Function
+
+    Private Function ParseJsonForInformation(jsonResponse As String) As String
+        ' Parse JSON using Newtonsoft.Json (Json.NET)
+        Dim json As JObject = JObject.Parse(jsonResponse)
+        Dim bodyText As String = json("body").ToString()
+
+        ' Find the index of the text to remove
+        Dim removeIndex As Integer = bodyText.IndexOf("[![Download LKTools]")
+
+        ' If the text is found, remove it and everything after it
+        If removeIndex <> -1 Then
+            bodyText = bodyText.Substring(0, removeIndex).Trim()
+        End If
+
+        Return bodyText
     End Function
 
 
