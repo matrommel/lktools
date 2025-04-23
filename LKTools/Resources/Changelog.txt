@@ -1,3 +1,12 @@
+V.0.4.24.0
+# Features:
+- 
+
+# Bugfixes:
+- karierter Vorlage als Bild war pixelig
+- kartierte Vorlage wird hinter Text eingefügt statt vor dem Text
+
+
 V.0.4.23.0
 # Features:
 - 
