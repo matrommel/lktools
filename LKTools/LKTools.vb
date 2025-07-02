@@ -141,7 +141,7 @@ Public Class LKTool
         End If
         If Not CreateObject("Scripting.FilesystemObject").FileExists(LKTool.myFile) Then
             Create_XML()
-            'MsgBox("LKTools hat eine Einstellungsdatei wurde in " & LKTools.myFolder & " gespeichert.")
+            'MsgBox("LKTools hat eine Einstellungsdatei wurde in " & LKTool.myFolder & " gespeichert.")
         End If
 
         Update_XML()
@@ -339,7 +339,8 @@ Public Class LKTool
         AddElement(xmlDoc, rootElem, "LastUpdate", Now().ToString())
 
         ' Saves XML data to disk.
-        xmlDoc.Save("your_file_path_here.xml")
+        xmlDoc.Save(LKTool.myFile)
+        xmlDoc = Nothing
     End Sub
 
     Private Sub AddElement(xmlDoc As XmlDocument, rootElem As XmlElement, name As String, text As String)

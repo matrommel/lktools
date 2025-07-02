@@ -34,9 +34,26 @@ LKTools
 </member>
 <member name="P:LKTools.My.Resources.Resources.Changelog">
 <summary>
-  Sucht eine lokalisierte Zeichenfolge, die V.0.4.20.0
+  Sucht eine lokalisierte Zeichenfolge, die V.0.4.22.0
+# Features:
+- 
+
+# Bugfixes:
+- neues Testzertifikat
+- Refactoring XML Datei fÃ¼r die Speicherung von User Einstellungen
+- karierter Vorlage als Bild hÃ¤ngt sich auf
+
+V.0.4.21.0
 # Features:
 - Karierte Vorlage hÃ¤ngt sich auf falls nur eine Zeile eingegeben wird.
+- Karierte Vorlage als Bild einfÃ¼gbar
+
+# Bugfixes:
+- neues Testzertifikat
+
+
+V.0.4.20.0
+# Features:
 
 # Bugfixes:
 - neues Testzertifikat
@@ -45,20 +62,7 @@ V.0.4.19.0
 # Features:
 
 # Bugfixes:
-- #6 Karierte Vorlage hÃ¤ngt sich auf falls nur eine Zeile eingegeben wird.
-
-V.0.4.19.0
-# Features:
-
-# Bugfixes:
-- Neues Testzertifikat erstellt
-
-V.0.4.18.0
-# Features:
-- Karierte Vorlage ist nun als Bild einf gbar
-
-# Bugfixes:
-- Bei Verwendung der Revisionshistorie wird eine etwaige &quot;Gegen berliegende Seite&quot; aus dem  [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+- #6 Karierte Vorlage hÃ¤ngt sich auf f [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
 </summary>
 </member>
 <member name="P:LKTools.My.Resources.Resources.ColorSelection">
@@ -163,7 +167,7 @@ V.0.4.18.0
 </member>
 <member name="P:LKTools.My.Resources.Resources.smallDot">
 <summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:LKTools.My.Resources.Resources.StatusAnnotations_Warning_32xLG_color">

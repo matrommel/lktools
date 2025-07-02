@@ -127,17 +127,17 @@
   <data name="btnHide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABUSURBVFhH7dExCgAxCERRz+b977QhkGotbCI/xX+Q
-        YgrDoKGnZOa334njuegGbmcV0ytq/8cLCD8BXkD4CfACwk+AFxB+AryA/iuazkU3cDvrARELlAep4YXS
-        HEMAAAAASUVORK5CYII=
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABmSURBVFhH7dCxCcBADEPRm83775SQ1i5UiB8O4Qcu
+        DEKFzlk3qarnu7/+oQfofw30RLJfBkx0fwB6ItkvAya6PwA9keyXARPdH4CeSPbLgInuD0BPJPtlwET3
+        B+gT0f/QA/S/rvAClAep4clH9wYAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnHideOverlay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABUSURBVFhH7dExCgAxCERRz+b977QhkGotbCI/xX+Q
-        YgrDoKGnZOa334njuegGbmcV0ytq/8cLCD8BXkD4CfACwk+AFxB+AryA/iuazkU3cDvrARELlAep4YXS
-        HEMAAAAASUVORK5CYII=
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABmSURBVFhH7dCxCcBADEPRm83775SQ1i5UiB8O4Qcu
+        DEKFzlk3qarnu7/+oQfofw30RLJfBkx0fwB6ItkvAya6PwA9keyXARPdH4CeSPbLgInuD0BPJPtlwET3
+        B+gT0f/QA/S/rvAClAep4clH9wYAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnMC.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -187,10 +187,10 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAAOvAAADrwBlbxySQAAAHtJREFUOE+9zj0OgCAM
-        hmEO5eBMuBYewHvJddSFtaYkJR/En9oYh8c0xL7giKjIOROS8yd14KVxHopXAbwVA6Jf6DU39/4LCFzU
-        KAH+yAEGvPe3TgNoW/cGL+HM/zQBKeMSUge0TC9IS6IYJ3sghFDny4DW9wGLGrAjdwD+rvB06qBr8QAA
-        AABJRU5ErkJggg==
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAAOvAAADrwBlbxySQAAAHhJREFUOE9j+P//PwMI
+        f/v27T8yhokTwnAGSJNFlwkYk2QAsq3IBhDrEhSb0TH9DMDnBXwYbACIwGaAk5MTXozVAGT84f1HFAzS
+        hMzGMABmMrpGkg0gFuM0AN1mZFuPHT32v7a2jnwDXFxc6OAFYjGGAeRguAGUYAD+rvB0rALzMgAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
   <metadata name="NotifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

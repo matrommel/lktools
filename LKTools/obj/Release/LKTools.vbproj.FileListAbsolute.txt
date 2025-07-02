@@ -99,3 +99,32 @@ C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Release\LKTools.vbproj.
 C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Release\LKTools.dll
 C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Release\LKTools.xml
 C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Release\LKTools.pdb
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.AssemblyReference.cache
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.dll.config
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.xml
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.pdb
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\LKTools.dll.config
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\LKTools.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\LKTools.pdb
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\LKTools.xml
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\LKTools.dll.manifest
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\LKTools.vsto
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\Microsoft.Office.Tools.v4.0.Framework.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\Microsoft.VisualStudio.Tools.Applications.Runtime.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\Newtonsoft.Json.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\Newtonsoft.Json.xml
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\Interop.IWshRuntimeLibrary.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\Interop.MSXML2.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\Interop.WinHttp.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.ResolveComReference.cache
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.frmChangelog.resources
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.frmPDFExport.resources
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.frmSettings.resources
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.frmIHK.resources
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.LKTool.resources
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.Resources.resources
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.GenerateResource.cache
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.Up2Date

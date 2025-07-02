@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="LKTools.dll" version="0.4.21.0" publicKeyToken="584d19b30f9a46aa" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="LKTools.dll" version="0.4.25.0" publicKeyToken="ae085a680c67a572" language="neutral" processorArchitecture="msil" type="win32" />
   <description xmlns="urn:schemas-microsoft-com:asm.v1">Dies bereitgestellten Funktionen sollen die Erstellung von Arbeitsblättern erleichtern, da sowohl die Version für Lernende und für die Lehrkraft (Lösungsvorschläge) in einem Dokument gepflegt werden können.</description>
   <application />
   <entryPoint>
@@ -78,6 +78,16 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Numerics" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Runtime.Serialization" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="System.Windows.Forms" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
     </dependentAssembly>
   </dependency>
@@ -98,13 +108,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LKTools.dll" size="613376">
-      <assemblyIdentity name="LKTools" version="0.4.21.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="LKTools" version="0.4.25.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ViD77/QWPTKBh8oXkVyaX7p39/Pt6gT88wesi+rKeA4=</dsig:DigestValue>
+        <dsig:DigestValue>jMJHWUKjQ9RyxDD1Mx6dICtMG0W5jjrchh1b4HJ36f8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -144,6 +154,18 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="711952">
+      <assemblyIdentity name="Newtonsoft.Json" version="13.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4eJ697B+7t9c5xqSVfBCKBam/FhJpIPGcU4bRyBE+p0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
   <file name="LKTools.dll.config" size="1796">
     <hash>
       <dsig:Transforms>
@@ -157,7 +179,7 @@
     <vstav3:entryPointsCollection>
       <vstav3:entryPoints>
         <vstav3:entryPoint class="LKTools.ThisAddIn">
-          <assemblyIdentity name="LKTools" version="0.4.21.0" language="neutral" processorArchitecture="msil" />
+          <assemblyIdentity name="LKTools" version="0.4.25.0" language="neutral" processorArchitecture="msil" />
         </vstav3:entryPoint>
       </vstav3:entryPoints>
     </vstav3:entryPointsCollection>
@@ -169,11 +191,11 @@
             <vstov4:friendlyName>LKTools</vstov4:friendlyName>
             <vstov4:description>Dies bereitgestellten Funktionen sollen die Erstellung von Arbeitsblättern erleichtern, da sowohl die Version für Lernende und für die Lehrkraft (Lösungsvorschläge) in einem Dokument gepflegt werden können.</vstov4:description>
             <vstov4.1:ribbonTypes xmlns:vstov4.1="urn:schemas-microsoft-com:vsto.v4.1">
-              <vstov4.1:ribbonType name="LKTools.LKTool, LKTools, Version=0.4.21.0, Culture=neutral, PublicKeyToken=null" />
+              <vstov4.1:ribbonType name="LKTools.LKTool, LKTools, Version=0.4.25.0, Culture=neutral, PublicKeyToken=null" />
             </vstov4.1:ribbonTypes>
           </vstov4:appAddIn>
         </vstov4:customization>
       </vstov4:customizations>
     </vstav3:application>
   </vstav3:addIn>
-<publisherIdentity name="CN=ROMMEL\mromm" issuerKeyHash="f75e7b7d46ad5a1fd291c6260949fbca0f61e098" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>wP3buKR17ZYEOhWCLiJB4r73ancvmkjkZxJtYGs15As=</DigestValue></Reference></SignedInfo><SignatureValue>i9tC3uRzYUio1ozt/mfxT5QfrohRB5BYcnii8kqnNCtYmiAAaD/25ysvKsiQwv35SP/Y+SBcq4gWtw3ijwMIgE8ISNTj+Pqil2ny+1/XzeayrIJLeQIX+i/QOm5aZmvKuKKUPMUY/REPXDN17KOLSBJEE/4XZmvSx22ZImQ4qe4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>s3h4QwxlfkCtjQMJOqTENmUy7kazEoO+27kQpmkIPPC4B1beaxbAQCXS7mFFYggaSRGXhzrrfVgkIYwDXJ2y0Roy//emEKsWVUwRvkG5cIoMWLw3wHQpRfcWAEwEEdROaEaLNV6K9QuDBkykYSlLwSOEzPbgLEK6DwLZ/4KzO9E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="0be4356b606d1267e4489a2f776af7bee241222e82153a0496ed75a4b8dbfdc0" Description="" Url=""><as:assemblyIdentity name="LKTools.dll" version="0.4.21.0" publicKeyToken="584d19b30f9a46aa" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ROMMEL\mromm</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>uGbsetLtx/FlpfVxkUJ7pb2+WjXaoSK/0yRXDhlKRJc=</DigestValue></Reference></SignedInfo><SignatureValue>NfytxAGEB8HSjxsmRdteV/UZSYhmjiXHsCMsFMxx7a8eUfVynUcRuVgW4nFxnCymI1D/seMdOJt2of9ZO9um7uOnl9e/oML9fxuJLsqfWyp8i8Z6kmhLy+K+FLTZ7CdUVm5Rhr/uVWFwFf31X/q6aZ783j1R1FhbdrqL4Jsorbs=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>s3h4QwxlfkCtjQMJOqTENmUy7kazEoO+27kQpmkIPPC4B1beaxbAQCXS7mFFYggaSRGXhzrrfVgkIYwDXJ2y0Roy//emEKsWVUwRvkG5cIoMWLw3wHQpRfcWAEwEEdROaEaLNV6K9QuDBkykYSlLwSOEzPbgLEK6DwLZ/4KzO9E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQFd/Yiyp6NYtIvK94OxmWYTANBgkqhkiG9w0BAQsFADAjMSEwHwYDVQQDHhgAUgBPAE0ATQBFAEwAXABtAHIAbwBtAG0wHhcNMjQwNDE1MDYxNjIyWhcNMjUwNDE1MTIxNjIyWjAjMSEwHwYDVQQDHhgAUgBPAE0ATQBFAEwAXABtAHIAbwBtAG0wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALN4eEMMZX5ArY0DCTqkxDZlMu5GsxKDvtu5EKZpCDzwuAdW3msWwEAl0u5hRWIIGkkRl4c6631YJCGMA1ydstEaMv/3phCrFlVMEb5BuXCKDFi8N8B0KUX3FgBMBBHUTmhGizVeivULgwZMpGEpS8EjhMz24CxCug8C2f+CszvRAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAoopf8DskZ5mOGjJd0fK70iYsCOFc9bnUR0C09mnlsCfzdwWJIYExsi1M+7GS4uS+BQj4tvR7aawA860ieUgMCiY5SqKRX7qKTNJ1/hR0v8QR2UFc4+K3X2uH7GQ23ZluQCFqj/fFt6lB9Xh8jbvfzgL8ghtqrjI6DD50L7gQc1o=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=ROMMEL\mromm" issuerKeyHash="bd6c0868934f79b466e687d0278dac54f649de5b" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>ZZS9W323iyUrChffBViHJTWOUXkGatNFGmi+cCrqGpU=</DigestValue></Reference></SignedInfo><SignatureValue>mePCTbtqrJan5E28aCDmgVMCeSQ/UkM9G3kY0XVYgKz5c8Yv/88rAF+yV2Na5lFefp0w8rXEfY3VBfGzANwIyghxWzbVz/LceslLp3ZUklJHKX8BcVtZ8Vv3B6sS09t7vY4Pi1YzhJjfq+UO5HyVCqOjCGUez8OVePmvD4qkB+4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0pR86+AgKpMy57eE4IEa5Y859YRWP2lakpg8PKP0QdrV+cQRYHFaYJ3wHnoY26PtqXLbuMA9z4C+Jzs553s/PifkL6sLTn8cZ27ad4VZfGDWrn3VtWAmK/iBXLr4J/B10QP9ycSNJCrI+cNSNSOtsr3GKYaiPxElgouWlg6kO3k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="951aea2a70be681a45d36a0679518e3525875805df170a2b258bb77d5bbd9465" Description="" Url=""><as:assemblyIdentity name="LKTools.dll" version="0.4.25.0" publicKeyToken="ae085a680c67a572" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ROMMEL\mromm</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/JXiVx6JMrb1mXC+mbPLLfO2L5ETt0FL0/U2fQQXuHM=</DigestValue></Reference></SignedInfo><SignatureValue>kKXw8RV5PiXY6qbrSw/FGIfNSLOgiyY3WmlA0izFUvPzzVM6vXgEvGV5N8gluAQm4YSOLnkLDl+6v414FzERwKdeY7vv4eYgL4yfrWhHGPvZ7ItK6f1rSe2SFhrVQ/6SbjPgPbAkWCZ6/T7rIXUfUcMRWbUfKjP5Bx5CCvJXv3o=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0pR86+AgKpMy57eE4IEa5Y859YRWP2lakpg8PKP0QdrV+cQRYHFaYJ3wHnoY26PtqXLbuMA9z4C+Jzs553s/PifkL6sLTn8cZ27ad4VZfGDWrn3VtWAmK/iBXLr4J/B10QP9ycSNJCrI+cNSNSOtsr3GKYaiPxElgouWlg6kO3k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQY4XHDSj0+KpIvc80C8o8oDANBgkqhkiG9w0BAQsFADAjMSEwHwYDVQQDHhgAUgBPAE0ATQBFAEwAXABtAHIAbwBtAG0wHhcNMjUwMzIwMTIxMTE3WhcNMjYwMzIwMTgxMTE3WjAjMSEwHwYDVQQDHhgAUgBPAE0ATQBFAEwAXABtAHIAbwBtAG0wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANKUfOvgICqTMue3hOCBGuWPOfWEVj9pWpKYPDyj9EHa1fnEEWBxWmCd8B56GNuj7aly27jAPc+Avic7Oed7Pz4n5C+rC05/HGdu2neFWXxg1q591bVgJiv4gVy6+CfwddED/cnEjSQqyPnDUjUjrbK9ximGoj8RJYKLlpYOpDt5AgMBAAEwDQYJKoZIhvcNAQELBQADgYEAjjCQiAgqGxpwVxkHCT0VLXhjVVGl8LA42E7NFWJDJ9ooaiRk3c353XRBDDNo5izhq7yc4QE/kFsLigPJlt4SpciaOy+WU4sDt8/8Lctjyh4kanJniPNVWkWTpqf/GhhiaTXkJqFJ+56hqWSWasOOpkUOrKQW2VpiJ+TULUL5uVg=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
