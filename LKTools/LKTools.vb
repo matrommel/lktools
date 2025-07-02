@@ -52,6 +52,7 @@ Public Class LKTool
     Public Shared RuledButton As Boolean 'defines if Button "linierte Vorlage" should be visible
     Public Shared RuledSpacing As Single ' Dim height As Single = 0.75 'cm 
     Public Shared RuledRows As Integer 'dim rows as integer 
+    Public Shared RuledColumnOffset As Integer 'Dim offset As Integer = 0
     Public Shared RuledStyle As Integer 'Style of the template
     Public Shared RuledStyleWidth As Integer 'Style of the template width
     '#### Graph Template
@@ -272,6 +273,7 @@ Public Class LKTool
         AddElement(xmlDoc, rootElem, "RuledButton", "True")
         AddElement(xmlDoc, rootElem, "RuledSpacing", "0,75")
         AddElement(xmlDoc, rootElem, "RuledRows", "10")
+        AddElement(xmlDoc, rootElem, "RuledColumnOffset", "0")
         AddElement(xmlDoc, rootElem, "RuledStyle", "1")
         AddElement(xmlDoc, rootElem, "RuledStyleWidth", "4")
 
@@ -391,6 +393,7 @@ Public Class LKTool
         {"RuledButton", "True"},
         {"RuledSpacing", "0,75"},
         {"RuledRows", "10"},
+        {"RuledColumnOffset", "0"},
         {"RuledStyle", "1"},
         {"RuledStyleWidth", "4"},
         {"GraphButton", "True"},
@@ -498,6 +501,7 @@ Public Class LKTool
             RuledSpacing = CSng(point.selectSingleNode("//RuledSpacing").text)
             RuledRows = Int(point.selectSingleNode("//RuledRows").text)
             RuledStyle = Int(point.selectSingleNode("//RuledStyle").text)
+            RuledColumnOffset = Int(point.selectSingleNode("//RuledColumnOffset").text)
             RuledStyleWidth = Int(point.selectSingleNode("//RuledStyleWidth").text)
 
             '## Graph Template
@@ -952,6 +956,9 @@ Public Class LKTool
         'Calculate the number of columns based on table or document width
         columns = getDocWithForTables() / graphwidthPoints
 
+        'Reduce the columns by an column offset
+        columns = columns - LKTool.RuledColumnOffset
+
         'If no number is entered, then 10 rows are created. Error if alphanumeric is entered
         If IsNumeric(txtRows.Text) Then
             GraphRowsTemp = CInt(txtRows.Text)
@@ -999,7 +1006,7 @@ Public Class LKTool
                         .TextureVerticalScale = 62.5
                     End With
 
-                    oShp.Width = getDocWithForTables()
+                    oShp.Width = getDocWithForTables() - (RuledColumnOffset * 14.175)
                     'oShp.Height = (GraphRowsTemp * 26) + 10
                     oShp.Height = (GraphRowsTemp * 14.175)
 

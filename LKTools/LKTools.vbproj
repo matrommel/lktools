@@ -285,6 +285,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="LKTools_1_TemporaryKey.pfx" />
     <None Include="LKTools_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="packages.config" />
@@ -607,10 +608,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LKTools_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LKTools_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>1D469A20A0EBBB6D8AA0727C9764FCEB72F3B342</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>41F2B5C5908D662E101939C8E2482B08308AFF6D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>

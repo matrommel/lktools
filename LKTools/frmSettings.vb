@@ -35,6 +35,7 @@ Public Class frmSettings
         chkRuledButton.Checked = LKTool.RuledButton
         txtRuledSpacing.Text = LKTool.RuledSpacing
         txtRuledRows.Text = LKTool.RuledRows
+        txtRuledColumnOffset.Text = LKTool.RuledColumnOffset
         '###### Ruled Style
         If LKTool.RuledStyle = 1 Then
             radStyleLine.Checked = True
@@ -201,6 +202,7 @@ Public Class frmSettings
         txtGraphRows.BackColor = Drawing.Color.White
         txtRuledRows.BackColor = Drawing.Color.White
         txtRuledSpacing.BackColor = Drawing.Color.White
+        txtRuledColumnOffset.BackColor = Drawing.Color.White
         txtMCRows.BackColor = Drawing.Color.White
         txtTrueFalseRows.BackColor = Drawing.Color.White
         txtTrueFalseTrueDesc.BackColor = Drawing.Color.White
@@ -224,6 +226,7 @@ Public Class frmSettings
             Or Check_GraphWidth() = False _
             Or Check_RuledRows() = False _
             Or Check_RuledSpacing() = False _
+            Or Check_RuledColumnOffset() = False _
             Or Check_SolutionDescription() = False _
             Or Check_InformAboutHiddenObjectsTime() = False _
             Or Check_Grades() = False _
@@ -357,6 +360,34 @@ Public Class frmSettings
         Return check
     End Function
 
+    'Validate if RuledSpacing is filled correct
+    Private Function Check_RuledColumnOffset()
+        Dim check As Boolean = False
+
+        If IsNumeric(txtRuledColumnOffset.Text) Then
+            If CSng(txtRuledColumnOffset.Text) >= 0 Then
+                check = True
+            Else
+                check = False
+                errorMsg = "Zahl in <" & lblRuledColumnOffset.Text & "> muss mindestens 0 sein."
+            End If
+        Else
+            check = False
+            errorMsg = "Zahl in <" & lblRuledSpacing.Text & "> fehlt."
+        End If
+
+        'Error message if RuledSpacing is no number or less then 0.38
+        If check = False Then
+            txtRuledColumnOffset.Select()
+            txtRuledColumnOffset.BackColor = bgColor
+            lblErrorText.Visible = True
+            lblErrorText.ForeColor = Drawing.Color.Red
+            lblErrorText.Text = errorMsg
+
+        End If
+        Return check
+    End Function
+
     'Validate if RuledRows is filled correct
     Private Function Check_RuledRows()
         Dim check As Boolean = False
@@ -442,7 +473,7 @@ Public Class frmSettings
     Private Function Check_TrueFalseTrueDesc()
         Dim check As Boolean = False
 
-        If txtTrueFalseTrueDesc.Text = "" And _
+        If txtTrueFalseTrueDesc.Text = "" And
             chkTrueFalseButton.Checked = True Then
             check = False
             errorMsg = "Text in <" & lblTrueFalseTrueDesc.Text & "> fehlt."
@@ -465,7 +496,7 @@ Public Class frmSettings
     Private Function Check_TrueFalseFalseDesc()
         Dim check As Boolean = False
 
-        If txtTrueFalseFalseDesc.Text = "" And _
+        If txtTrueFalseFalseDesc.Text = "" And
             chkTrueFalseButton.Checked = True Then
             check = False
             errorMsg = "Text in <" & lblTrueFalseFalseDesc.Text & "> fehlt."
@@ -488,8 +519,8 @@ Public Class frmSettings
     Private Function Check_TrueFalseReasonDesc()
         Dim check As Boolean = False
 
-        If txtTrueFalseReasonDesc.Text = "" And _
-            chkTrueFalseReason.Checked = True And _
+        If txtTrueFalseReasonDesc.Text = "" And
+            chkTrueFalseReason.Checked = True And
             chkTrueFalseButton.Checked = True Then
             check = False
             errorMsg = "Text in <" & lblTrueFalseReasonDesc.Text & "> fehlt."
@@ -512,7 +543,7 @@ Public Class frmSettings
     Private Function Check_SolutionDescription()
         Dim check As Boolean = False
 
-        If txtSolutionDescription.Text = "" And _
+        If txtSolutionDescription.Text = "" And
             chkAddSolution.Checked = True Then
             check = False
             errorMsg = "Text in <" & lblSolutionDescription.Text & "> fehlt."
@@ -616,7 +647,7 @@ Public Class frmSettings
             check = False
             errorMsg = "Zahl in <" & lblPathNumberFolders.Text & "> fehlt."
         End If
-   
+
 
         'Error message if PDFNoSolutionText is empty
         If check = False Then
@@ -633,7 +664,7 @@ Public Class frmSettings
     Private Function Check_PDFSolution()
         Dim check As Boolean = False
 
-        If txtPDFSolutionText.Text = "" And _
+        If txtPDFSolutionText.Text = "" And
             chkPrintSolution.Checked = True Then
             check = False
             errorMsg = "Text in <" & lblPDFSolutionText.Text & "> fehlt."
@@ -659,7 +690,7 @@ Public Class frmSettings
     Private Function Check_PDFNoSolution()
         Dim check As Boolean = False
 
-        If txtPDFNoSolutionText.Text = "" And _
+        If txtPDFNoSolutionText.Text = "" And
             chkPrintNoSolution.Checked = True Then
             check = False
             errorMsg = "Text in <" & lblPDFNoSolutionText.Text & "> fehlt."
@@ -685,11 +716,11 @@ Public Class frmSettings
     Private Function Check_PDFSubfolder()
         Dim check As Boolean = False
 
-        If txtpdfSubFolderText.Text = "" And _
+        If txtpdfSubFolderText.Text = "" And
             radPDFSubfolder.Checked = True Then
             check = False
             errorMsg = "Text in <" & lblPDFSubfolder.Text & "> fehlt."
-        ElseIf FileNameIsOk(txtpdfSubFolderText.Text) = False And _
+        ElseIf FileNameIsOk(txtpdfSubFolderText.Text) = False And
             radPDFSubfolder.Checked = True Then
             check = False
             errorMsg = "<" & lblPDFSubfolder.Text & "> enthält ungültige Zeichen."
@@ -712,14 +743,14 @@ Public Class frmSettings
     Private Function Check_PDFPath()
         Dim check As Boolean = False
 
-        If txtpdfPathText.Text = "" And _
+        If txtpdfPathText.Text = "" And
             radPDFPath.Checked = True Then
             check = False
             errorMsg = "Pfad fehlt."
-        ElseIf Not CreateObject("Scripting.FileSystemObject").FolderExists(txtpdfPathText.Text) And _
+        ElseIf Not CreateObject("Scripting.FileSystemObject").FolderExists(txtpdfPathText.Text) And
             radPDFPath.Checked = True Then
             check = False
-            MsgBox("Pfad existiert nicht. Bitte legen Sie diesen zunächst an oder wählen Sie einen anderen Pfad aus.", _
+            MsgBox("Pfad existiert nicht. Bitte legen Sie diesen zunächst an oder wählen Sie einen anderen Pfad aus.",
                    MsgBoxStyle.Information, "LKTools")
         Else
             check = True
@@ -786,6 +817,7 @@ Public Class frmSettings
         LKTool.RuledButton = chkRuledButton.Checked
         LKTool.RuledSpacing = CSng(txtRuledSpacing.Text)
         LKTool.RuledRows = CInt(txtRuledRows.Text)
+        LKTool.RuledColumnOffset = CInt(txtRuledColumnOffset.Text)
         'Ruled Style
         If radStyleLine.Checked = True Then
             LKTool.RuledStyle = 1
@@ -953,6 +985,7 @@ Public Class frmSettings
             point.selectSingleNode("//RuledButton").text = chkRuledButton.Checked
             point.selectSingleNode("//RuledSpacing").text = txtRuledSpacing.Text
             point.selectSingleNode("//RuledRows").text = txtRuledRows.Text
+            point.selectSingleNode("//RuledColumnOffset").text = txtRuledColumnOffset.Text
             point.selectSingleNode("//RuledStyle").text = LKTool.RuledStyle
             point.selectSingleNode("//RuledStyleWidth").text = LKTool.RuledStyleWidth
 
@@ -1181,6 +1214,7 @@ Public Class frmSettings
         LKTool.RuledButton = "True"
         LKTool.RuledSpacing = 0.75
         LKTool.RuledRows = 10
+        LKTool.RuledColumnOffset = 0
 
         '#### Graph Template
         LKTool.GraphButton = "True"
@@ -1401,10 +1435,10 @@ Public Class frmSettings
     'Check if a value is missing
     Function CheckMissingValues()
 
-        If Regex.IsMatch(txtGrade1.Text, "^[0-9]+$") And _
-            Regex.IsMatch(txtGrade2.Text, "^[0-9]+$") And _
-            Regex.IsMatch(txtGrade3.Text, "^[0-9]+$") And _
-            Regex.IsMatch(txtGrade4.Text, "^[0-9]+$") And _
+        If Regex.IsMatch(txtGrade1.Text, "^[0-9]+$") And
+            Regex.IsMatch(txtGrade2.Text, "^[0-9]+$") And
+            Regex.IsMatch(txtGrade3.Text, "^[0-9]+$") And
+            Regex.IsMatch(txtGrade4.Text, "^[0-9]+$") And
             Regex.IsMatch(txtGrade5.Text, "^[0-9]+$") Then
             Return True
         Else
@@ -1455,9 +1489,9 @@ Public Class frmSettings
         Dim result As MsgBoxResult
 
         If chkExtendedPDFButton.Checked = True And chkShowExtendedPDFSettings.Checked = True Then
-            result = MsgBox("Die Schaltfläche 'Erw. PDF Ausgabe' kann deaktiviert werden." & vbCrLf & _
-                   vbCrLf & _
-                   "Soll die Checkbox deaktiviert werden?", _
+            result = MsgBox("Die Schaltfläche 'Erw. PDF Ausgabe' kann deaktiviert werden." & vbCrLf &
+                   vbCrLf &
+                   "Soll die Checkbox deaktiviert werden?",
                    MsgBoxStyle.Information + MsgBoxStyle.YesNo, "LKTools")
             If result = MsgBoxResult.Yes Then
                 chkExtendedPDFButton.Checked = False
@@ -1563,4 +1597,15 @@ Public Class frmSettings
         lblOverlayExample.ForeColor = System.Drawing.ColorTranslator.FromOle(LKTool.ColorOverlay)
     End Sub
 
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtRuledColumnOffset.TextChanged
+
+    End Sub
+
+    Private Sub Label22_Click(sender As Object, e As EventArgs) Handles lblRuledColumnOffset.Click
+
+    End Sub
+
+    Private Sub grpkarierteVorlage_Enter(sender As Object, e As EventArgs) Handles grpkarierteVorlage.Enter
+
+    End Sub
 End Class

@@ -24,8 +24,8 @@ Partial Class frmSettings
     Private Sub InitializeComponent()
         Dim LKTabs As System.Windows.Forms.TabControl
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSettings))
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.tabSettings = New System.Windows.Forms.TabPage()
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
@@ -68,6 +68,8 @@ Partial Class frmSettings
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.chkExamButton = New System.Windows.Forms.CheckBox()
         Me.grpkarierteVorlage = New System.Windows.Forms.GroupBox()
+        Me.lblRuledColumnOffset = New System.Windows.Forms.Label()
+        Me.txtRuledColumnOffset = New System.Windows.Forms.TextBox()
         Me.chkGraphAsPicture = New System.Windows.Forms.CheckBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.chkGraphButton = New System.Windows.Forms.CheckBox()
@@ -909,6 +911,8 @@ Partial Class frmSettings
         '
         'grpkarierteVorlage
         '
+        Me.grpkarierteVorlage.Controls.Add(Me.lblRuledColumnOffset)
+        Me.grpkarierteVorlage.Controls.Add(Me.txtRuledColumnOffset)
         Me.grpkarierteVorlage.Controls.Add(Me.chkGraphAsPicture)
         Me.grpkarierteVorlage.Controls.Add(Me.Label24)
         Me.grpkarierteVorlage.Controls.Add(Me.chkGraphButton)
@@ -926,6 +930,32 @@ Partial Class frmSettings
         Me.grpkarierteVorlage.TabIndex = 4
         Me.grpkarierteVorlage.TabStop = False
         Me.grpkarierteVorlage.Text = "karierte Vorlage"
+        '
+        'lblRuledColumnOffset
+        '
+        Me.lblRuledColumnOffset.AutoSize = True
+        Me.HelpProvider1.SetHelpString(Me.lblRuledColumnOffset, "Legt fest, ob Spalten über die gesamte Breite der Seite gehen sollen. 0 bedeutet " &
+        "gesamte Breite.")
+        Me.lblRuledColumnOffset.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.lblRuledColumnOffset.Location = New System.Drawing.Point(231, 42)
+        Me.lblRuledColumnOffset.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.lblRuledColumnOffset.Name = "lblRuledColumnOffset"
+        Me.HelpProvider1.SetShowHelp(Me.lblRuledColumnOffset, True)
+        Me.lblRuledColumnOffset.Size = New System.Drawing.Size(77, 13)
+        Me.lblRuledColumnOffset.TabIndex = 46
+        Me.lblRuledColumnOffset.Text = "Spalten-Offset:"
+        '
+        'txtRuledColumnOffset
+        '
+        Me.HelpProvider1.SetHelpString(Me.txtRuledColumnOffset, "Legt fest, ob Spalten über die gesamte Breite der Seite gehen sollen. 0 bedeutet " &
+        "gesamte Breite.")
+        Me.txtRuledColumnOffset.Location = New System.Drawing.Point(307, 39)
+        Me.txtRuledColumnOffset.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtRuledColumnOffset.Name = "txtRuledColumnOffset"
+        Me.HelpProvider1.SetShowHelp(Me.txtRuledColumnOffset, True)
+        Me.txtRuledColumnOffset.Size = New System.Drawing.Size(32, 20)
+        Me.txtRuledColumnOffset.TabIndex = 45
+        Me.txtRuledColumnOffset.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'chkGraphAsPicture
         '
@@ -2000,29 +2030,29 @@ Partial Class frmSettings
         '
         'GradeGraph
         '
-        ChartArea3.AxisX.IntervalOffset = 1.0R
-        ChartArea3.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
-        ChartArea3.AxisX.IsStartedFromZero = False
-        ChartArea3.AxisX.Maximum = 6.0R
-        ChartArea3.AxisX.Minimum = 1.0R
-        ChartArea3.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
-        ChartArea3.AxisY.MajorGrid.Interval = 0R
-        ChartArea3.CursorX.IntervalOffset = 1.0R
-        ChartArea3.CursorX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
-        ChartArea3.CursorX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
-        ChartArea3.CursorX.LineWidth = 4
-        ChartArea3.Name = "ChartArea1"
-        Me.GradeGraph.ChartAreas.Add(ChartArea3)
+        ChartArea2.AxisX.IntervalOffset = 1.0R
+        ChartArea2.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
+        ChartArea2.AxisX.IsStartedFromZero = False
+        ChartArea2.AxisX.Maximum = 6.0R
+        ChartArea2.AxisX.Minimum = 1.0R
+        ChartArea2.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
+        ChartArea2.AxisY.MajorGrid.Interval = 0R
+        ChartArea2.CursorX.IntervalOffset = 1.0R
+        ChartArea2.CursorX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
+        ChartArea2.CursorX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number
+        ChartArea2.CursorX.LineWidth = 4
+        ChartArea2.Name = "ChartArea1"
+        Me.GradeGraph.ChartAreas.Add(ChartArea2)
         Me.HelpProvider1.SetHelpString(Me.GradeGraph, "Anzeige der Notenverteilung in Prozent. Änderung der Noten wirken sich direkt auf" &
         " die Anzeige aus.")
         Me.GradeGraph.Location = New System.Drawing.Point(281, 40)
         Me.GradeGraph.Margin = New System.Windows.Forms.Padding(1)
         Me.GradeGraph.Name = "GradeGraph"
         Me.GradeGraph.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Series3.ChartArea = "ChartArea1"
-        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series3.Name = "Series1"
-        Me.GradeGraph.Series.Add(Series3)
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series2.Name = "Series1"
+        Me.GradeGraph.Series.Add(Series2)
         Me.HelpProvider1.SetShowHelp(Me.GradeGraph, True)
         Me.GradeGraph.Size = New System.Drawing.Size(188, 174)
         Me.GradeGraph.TabIndex = 51
@@ -2596,7 +2626,7 @@ Partial Class frmSettings
         Me.tabExportPDF.Margin = New System.Windows.Forms.Padding(1)
         Me.tabExportPDF.Name = "tabExportPDF"
         Me.tabExportPDF.Padding = New System.Windows.Forms.Padding(1)
-        Me.tabExportPDF.Size = New System.Drawing.Size(506, 316)
+        Me.tabExportPDF.Size = New System.Drawing.Size(514, 316)
         Me.tabExportPDF.TabIndex = 1
         Me.tabExportPDF.Text = "PDF"
         '
@@ -3694,4 +3724,6 @@ Partial Class frmSettings
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents chkGraphAsPicture As System.Windows.Forms.CheckBox
+    Friend WithEvents lblRuledColumnOffset As System.Windows.Forms.Label
+    Friend WithEvents txtRuledColumnOffset As System.Windows.Forms.TextBox
 End Class
