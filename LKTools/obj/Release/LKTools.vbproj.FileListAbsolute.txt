@@ -99,11 +99,6 @@ C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Release\LKTools.vbproj.
 C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Release\LKTools.dll
 C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Release\LKTools.xml
 C:\Users\mromm\Documents\30 LK Tools\LKTools\LKTools\obj\Release\LKTools.pdb
-C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.AssemblyReference.cache
-C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.dll.config
-C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.dll
-C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.xml
-C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.pdb
 C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\LKTools.dll.config
 C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\LKTools.dll
 C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\LKTools.pdb
@@ -115,6 +110,7 @@ C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\Microsoft.Office.Tool
 C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\Microsoft.VisualStudio.Tools.Applications.Runtime.dll
 C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\Newtonsoft.Json.dll
 C:\Users\admin\Documents\repos\lktools\LKTools\bin\Release\Newtonsoft.Json.xml
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.AssemblyReference.cache
 C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\Interop.IWshRuntimeLibrary.dll
 C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\Interop.MSXML2.dll
 C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\Interop.WinHttp.dll
@@ -128,3 +124,7 @@ C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.Resources.res
 C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.GenerateResource.cache
 C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.CoreCompileInputs.cache
 C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.vbproj.Up2Date
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.dll
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.xml
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.pdb
+C:\Users\admin\Documents\repos\lktools\LKTools\obj\Release\LKTools.dll.config

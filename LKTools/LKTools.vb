@@ -2173,12 +2173,10 @@ Public Class LKTool
     Private Sub btnGetTextColor_Click(sender As Object, e As RibbonControlEventArgs) Handles btnGetTextColor.Click
         Dim cursor As Word.Selection
         Dim color As Long
-        Dim inselection As Boolean
 
         If isDocumentExtensionDocx() = True Then
 
             cursor = Globals.ThisAddIn.Application.Selection
-            inselection = False
 
             If cursor.Type = WdSelectionType.wdSelectionNormal Then
                 'Alpha Channel colors can't be used and selection must be avoided
@@ -2188,14 +2186,50 @@ Public Class LKTool
                     LKTool.ColorVisible = color
                 End If
             ElseIf cursor.Type = WdSelectionType.wdSelectionShape Then
-                'Alpha Channel colors can't be used and selection must be avoided
-                'Alpha Channel colors are defined e.g. in the header standard format templates
-                If CheckAlphaColor(cursor.Font.TextColor.RGB) = False Then
-                    color = cursor.ShapeRange.Line.ForeColor.RGB
-                    LKTool.ColorVisible = color
-                End If
+                'Für normale Shapes die Linienfarbe verwenden
+                Try
+                    If CheckAlphaColor(cursor.ShapeRange.Line.ForeColor.RGB) = False Then
+                        color = cursor.ShapeRange.Line.ForeColor.RGB
+                        LKTool.ColorVisible = color
+                    End If
+                Catch ex As Exception
+                    MsgBox("Fehler beim Auslesen der Farbe: " & ex.Message)
+                End Try
+            ElseIf cursor.Type = WdSelectionType.wdSelectionInlineShape Then
+                'Für InlineShapes (kann auch Stifteingaben enthalten)
+                Try
+                    Dim inlineShape As Word.InlineShape = cursor.InlineShapes(1)
+
+                    'Versuche, die Farbe aus dem InlineShape zu extrahieren
+                    'Stifteingaben werden oft als Picture gespeichert
+                    If inlineShape.Type = WdInlineShapeType.wdInlineShapePicture Or
+                   inlineShape.Type = WdInlineShapeType.wdInlineShapeLinkedPicture Then
+
+                        'Konvertiere zu Shape um auf Farb-Eigenschaften zuzugreifen
+                        Dim result As MsgBoxResult = MsgBox(
+                        "Um die Farbe von Stifteingaben zu extrahieren, muss das Objekt konvertiert werden." & vbCrLf &
+                        "Dadurch kann sich die Formatierung ändern." & vbCrLf & vbCrLf &
+                        "Möchten Sie fortfahren?",
+                        MsgBoxStyle.Question + MsgBoxStyle.YesNo,
+                        "LKTools")
+
+                        If result = MsgBoxResult.Yes Then
+                            Dim tempShape As Word.Shape = inlineShape.ConvertToShape()
+
+                            If CheckAlphaColor(tempShape.Line.ForeColor.RGB) = False Then
+                                color = tempShape.Line.ForeColor.RGB
+                                LKTool.ColorVisible = color
+                                MsgBox("Farbe wurde erfolgreich extrahiert.", MsgBoxStyle.Information, "LKTools")
+                            End If
+                        End If
+                    Else
+                        MsgBox("Dieser InlineShape-Typ wird nicht unterstützt.", MsgBoxStyle.Information, "LKTools")
+                    End If
+                Catch ex As Exception
+                    MsgBox("Fehler beim Auslesen der Farbe: " & ex.Message, MsgBoxStyle.Exclamation, "LKTools")
+                End Try
             Else
-                MsgBox("LKTools hat leider keine Auswahl gefunden.")
+                MsgBox("LKTools hat leider keine Auswahl gefunden oder das Objekt wird nicht unterstützt.", MsgBoxStyle.Information, "LKTools")
             End If
 
         Else

@@ -39,7 +39,7 @@
     <IsWebBootstrapper>False</IsWebBootstrapper>
     <TargetFrameworkProfile />
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Users\mromm\Downloads\LKToolsGit\</PublishUrl>
+    <PublishUrl>C:\Users\admin\Downloads\LKToolsGit\</PublishUrl>
     <InstallUrl />
     <TargetCulture>de</TargetCulture>
     <ApplicationVersion>0.4.25.0</ApplicationVersion>
@@ -285,7 +285,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
-    <None Include="LKTools_1_TemporaryKey.pfx" />
     <None Include="LKTools_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="packages.config" />
@@ -608,10 +607,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LKTools_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LKTools_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>41F2B5C5908D662E101939C8E2482B08308AFF6D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>18AF87A0E76308B2A4D1245AB9990B6E4EE03FFF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
